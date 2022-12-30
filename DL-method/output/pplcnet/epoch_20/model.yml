@@ -1,0 +1,48 @@
+Model: PPLCNet
+Transforms:
+- ResizeByShort:
+    interp: LINEAR
+    max_size: -1
+    short_size: 158
+- CenterCrop:
+    crop_size: 158
+- Normalize:
+    is_scale: true
+    max_val:
+    - 255.0
+    - 255.0
+    - 255.0
+    mean:
+    - 0.485
+    - 0.456
+    - 0.406
+    min_val:
+    - 0
+    - 0
+    - 0
+    std:
+    - 0.229
+    - 0.224
+    - 0.225
+_Attributes:
+  eval_metrics:
+    acc1: 0.9015151262283325
+  fixed_input_shape: null
+  labels:
+  - 2S1
+  - BMP2(SN_9566)
+  - BRDM_2
+  - BTR70(SN-C71)
+  - BTR_60
+  - D7
+  - T62
+  - T72(SN_132)
+  - ZIL131
+  - ZSU_23_4
+  model_type: classifier
+  num_classes: 10
+_init_params:
+  num_classes: 10
+completed_epochs: 20
+status: Normal
+version: 2.1.0
